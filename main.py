@@ -1,13 +1,20 @@
+from crypt import methods
+
 from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
+@app.route("/", methods=["GET"])
+def index():
+    return render_template("index.html")
+
+
 # =========================
 # FORMULÁRIO
 # =========================
-@app.route("/")
-def index():
+@app.route("/formulario", methods=["GET"])
+def form():
     return render_template("form.html")
 
 

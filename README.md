@@ -180,5 +180,4 @@ DATABASE = "inscricoes.db"  # caminho para o banco SQLite
 ---
 
 ## 📍 Organização
-
 **Prefeitura de Araruna** — Araruna, Paraná, Brasil
