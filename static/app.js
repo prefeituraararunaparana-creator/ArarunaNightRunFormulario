@@ -139,3 +139,48 @@ form.addEventListener("submit", async function (e) {
     btn.textContent = "Realizar inscrição";
   }
 });
+
+const diasEl = document.getElementById("dias");
+const horasEl = document.getElementById("horas");
+const minEl = document.getElementById("min");
+const segEl = document.getElementById("seg");
+
+function atualizarContador() {
+  const evento = new Date("2026-05-19T20:00:00");
+  const agora = new Date();
+
+  const diff = evento - agora;
+
+  if (diff <= 0) {
+    document.querySelector(".countdown").innerHTML = "<p>O evento começou!</p>";
+
+    clearInterval(timer);
+
+    return;
+  }
+
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  const horas = Math.floor(
+    (diff % (1000 * 60 * 60 * 24)) /
+      (1000 * 60 * 60),
+  );
+
+  const min = Math.floor(
+    (diff % (1000 * 60 * 60)) /
+      (1000 * 60),
+  );
+
+  const seg = Math.floor(
+    (diff % (1000 * 60)) / 1000,
+  );
+
+  diasEl.textContent = String(dias).padStart(2, "0");
+  horasEl.textContent = String(horas).padStart(2, "0");
+  minEl.textContent = String(min).padStart(2, "0");
+  segEl.textContent = String(seg).padStart(2, "0");
+}
+
+atualizarContador();
+
+const timer = setInterval(atualizarContador, 1000);

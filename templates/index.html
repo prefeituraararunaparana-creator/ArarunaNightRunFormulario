@@ -7,7 +7,7 @@
             rel="stylesheet"
             href="{{ url_for('static', filename='css/style.css') }}"
         />
-        <script src="../static/app.js" defer></script>
+        <script src="{{ url_for('static', filename='app.js') }}" defer></script>
         <title>Sobre o evento - Araruna Night Run 2026</title>
     </head>
     <body>
@@ -29,27 +29,97 @@
                     </a>
                     <a href="/about">
                         <button class="about">
-
+                            Sobre o evento
                         </button>
                     </a>
                 </div>
 
                 <div class="countdown">
                     <div class="count-box">
-                        <strong>12</strong>
+                        <strong id="dias">00</strong>
                         <span>Dias</span>
                     </div>
 
                     <div class="count-box">
-                        <strong>08</strong>
+                        <strong id="horas">00</strong>
                         <span>Horas</span>
                     </div>
 
                     <div class="count-box">
-                        <strong>44</strong>
+                        <strong id="min">00</strong>
                         <span>Min</span>
                     </div>
+
+                    <div class="count-box">
+                        <strong id="seg">00</strong>
+                        <span>Seg</span>
+                    </div>
                 </div>
+                <script>
+                window.addEventListener("DOMContentLoaded", () => {
+
+                        const diasEl = document.getElementById("dias");
+                        const horasEl = document.getElementById("horas");
+                        const minEl = document.getElementById("min");
+                        const segEl = document.getElementById("seg");
+
+                        function atualizarContador() {
+
+                            const evento = new Date("2026-05-19T20:00:00");
+                            const agora = new Date();
+
+                            const diff = evento - agora;
+
+                            if (diff <= 0) {
+
+                                document.querySelector(".countdown").innerHTML =
+                                    "<p>O evento começou!</p>";
+
+                                clearInterval(timer);
+
+                                return;
+                            }
+
+                            const dias = Math.floor(
+                                diff / (1000 * 60 * 60 * 24)
+                            );
+
+                            const horas = Math.floor(
+                                (diff % (1000 * 60 * 60 * 24)) /
+                                (1000 * 60 * 60)
+                            );
+
+                            const min = Math.floor(
+                                (diff % (1000 * 60 * 60)) /
+                                (1000 * 60)
+                            );
+
+                            const seg = Math.floor(
+                                (diff % (1000 * 60)) / 1000
+                            );
+
+                            diasEl.textContent =
+                                String(dias).padStart(2, "0");
+
+                            horasEl.textContent =
+                                String(horas).padStart(2, "0");
+
+                            minEl.textContent =
+                                String(min).padStart(2, "0");
+
+                            segEl.textContent =
+                                String(seg).padStart(2, "0");
+                        }
+
+                        atualizarContador();
+
+                        const timer = setInterval(
+                            atualizarContador,
+                            1000
+                        );
+
+                    });
+                </script>
                 <br />
                 <section class="categories">
 
@@ -76,26 +146,4 @@
 
                 </section>
     </body>
-    <script>
-
-    const modal = document.getElementById("eventModal");
-
-    const openBtn = document.getElementById("openModal");
-
-    const closeBtn = document.getElementById("closeModal");
-
-    openBtn.addEventListener("click", () => {
-      modal.classList.add("active");
-    });
-
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("active");
-    });
-
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.remove("active");
-      }
-    });
-    </script>
 </html>
