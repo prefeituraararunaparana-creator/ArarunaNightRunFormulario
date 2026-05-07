@@ -139,23 +139,3 @@ form.addEventListener("submit", async function (e) {
     btn.textContent = "Realizar inscrição";
   }
 });
-
-const modal = document.getElementById("eventModal");
-
-const openBtn = document.getElementById("openModal");
-
-const closeBtn = document.getElementById("closeModal");
-
-openBtn.addEventListener("click", () => {
-  modal.classList.add("active");
-});
-
-closeBtn.addEventListener("click", () => {
-  modal.classList.remove("active");
-});
-
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.classList.remove("active");
-  }
-});
