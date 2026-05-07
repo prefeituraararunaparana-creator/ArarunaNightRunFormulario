@@ -1,0 +1,149 @@
+<!-- ─────────────────────────────────────────
+     BOTÃO "SOBRE O EVENTO" → adicionar no .header do index.html
+     ───────────────────────────────────────── -->
+<button class="mev-open-btn" onclick="abrirModal()">Sobre o Evento</button>
+
+
+<!-- ─────────────────────────────────────────
+     MODAL SOBRE O EVENTO → adicionar antes do </body>
+     ───────────────────────────────────────── -->
+<div id="modalEvento" class="mev-overlay" onclick="fecharModalFora(event)">
+  <div class="mev-box">
+
+    <!-- Header -->
+    <div class="mev-header">
+      <span class="mev-titulo">Sobre o Evento</span>
+      <button class="mev-fechar" onclick="fecharModal()">✕</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="mev-tabs">
+      <button class="mev-tab active" data-tab="etapa1" onclick="trocarTab(this)">🏅 1ª Etapa</button>
+      <button class="mev-tab" data-tab="etapa2" onclick="trocarTab(this)">🌙 2ª Etapa</button>
+      <button class="mev-tab" data-tab="proximas" onclick="trocarTab(this)">🚀 Próximas</button>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="mev-content">
+
+      <!-- ── 1ª ETAPA ── -->
+      <div id="mev-etapa1" class="mev-pane active">
+        <div class="mev-badge success">✓ Evento realizado com sucesso</div>
+        <h3 class="mev-h3">A Noite que Iluminou Araruna</h3>
+        <p class="mev-p">
+          A primeira etapa do Araruna Night Run aconteceu no dia <strong>31 de janeiro de 2026</strong>, às 20h00,
+          na Avenida Marfim, em Araruna - PR. O evento foi realizado em parceria com o <strong>Projeto Rondon</strong>,
+          uma ação interministerial do Governo Federal coordenada pelo Ministério da Defesa, que envia universitários
+          voluntários para comunidades do Brasil. Naquele período o Projeto estava presente na cidade.
+        </p>
+        <p class="mev-p">
+          Com percursos de caminhada (2km) e corrida (6km), o evento reuniu <strong>mais de 600 participantes</strong>
+          — desde crianças até idosos — provando que o Araruna Night Run é um evento para toda a família.
+          Diferentes faixas etárias, uma só pista, uma só festa.
+        </p>
+
+        <div class="mev-stats">
+          <div class="mev-stat">
+            <span class="mev-stat-num">600+</span>
+            <span class="mev-stat-label">Inscritos</span>
+          </div>
+          <div class="mev-stat">
+            <span class="mev-stat-num">12</span>
+            <span class="mev-stat-label">Cidades Participantes</span>
+          </div>
+          <div class="mev-stat">
+            <span class="mev-stat-num">300+</span>
+            <span class="mev-stat-label">Corredores na Caminhada</span>
+          </div>
+        </div>
+
+        <!-- Carrossel -->
+        <div class="mev-carrossel">
+          <button class="mev-carr-btn prev" onclick="moverCarrossel(-1)">&#8249;</button>
+          <div class="mev-carr-viewport">
+            <div class="mev-carr-track" id="carrTrack">
+              <div class="mev-carr-slide"><img src="static/fotos/foto1.jpg" alt="1ª Etapa"></div>
+              <div class="mev-carr-slide"><img src="static/fotos/foto2.jpg" alt="1ª Etapa"></div>
+              <div class="mev-carr-slide"><img src="static/fotos/foto3.jpg" alt="1ª Etapa"></div>
+              <div class="mev-carr-slide"><img src="static/fotos/foto4.jpg" alt="1ª Etapa"></div>
+            </div>
+          </div>
+          <button class="mev-carr-btn next" onclick="moverCarrossel(1)">&#8250;</button>
+          <div class="mev-carr-dots" id="carrDots"></div>
+        </div>
+      </div>
+
+      <!-- ── 2ª ETAPA ── -->
+      <div id="mev-etapa2" class="mev-pane">
+        <h3 class="mev-h3">Prepare-se para a Segunda Edição</h3>
+        <p class="mev-p">
+          A magia continua! Após o sucesso da primeira edição, estamos prontos para oferecer uma experiência
+          ainda mais incrível na segunda etapa da Araruna Night Run.
+        </p>
+
+        <div class="mev-grid">
+          <div class="mev-card">
+            <div class="mev-card-icon">📅</div>
+            <div>
+              <strong>Data e Horário</strong>
+              <p>12 de junho de 2026<br>Largada: 19h30<br>Local: Em frente à Rádio Cidade</p>
+            </div>
+          </div>
+          <div class="mev-card">
+            <div class="mev-card-icon">🏆</div>
+            <div>
+              <strong>Percursos</strong>
+              <p>• 5K - Corrida<br>• 10K - Corrida<br>• Caminhada</p>
+            </div>
+          </div>
+          <div class="mev-card">
+            <div class="mev-card-icon">📦</div>
+            <div>
+              <strong>Kit do Atleta</strong>
+              <p>• Camiseta oficial do evento<br>• Número de peito<br>• Chip de cronometragem<br>• Sacochila exclusiva</p>
+            </div>
+          </div>
+          <div class="mev-card">
+            <div class="mev-card-icon">🎁</div>
+            <div>
+              <strong>Premiação</strong>
+              <p>• Troféus para os 3 primeiros<br>• Premiação por categoria<br>• Medalhas para todos os participantes</p>
+            </div>
+          </div>
+          <div class="mev-card">
+            <div class="mev-card-icon">📋</div>
+            <div>
+              <strong>Retirada do Kit</strong>
+              <p>Data: 10 e 11 de junho<br>Horário: 14h às 20h<br>Local: Ginásio Municipal</p>
+            </div>
+          </div>
+          <div class="mev-card">
+            <div class="mev-card-icon">📄</div>
+            <div>
+              <strong>Regulamento</strong>
+              <p>• Idade mínima: 16 anos<br>• Atestado médico obrigatório<br>• Documento com foto na retirada</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="mev-btn-inscricao" onclick="fecharModal()">REALIZE SUA INSCRIÇÃO</button>
+      </div>
+
+      <!-- ── PRÓXIMAS ── -->
+      <div id="mev-proximas" class="mev-pane">
+        <div class="mev-proximas-box">
+          <div class="mev-badge em-breve">✨ Em breve</div>
+          <h3 class="mev-h3 purple">3ª Etapa — Novembro 2026</h3>
+          <p class="mev-p-sub">Prepare-se para uma experiência ainda maior.</p>
+          <p class="mev-p">
+            A terceira etapa da Araruna Night Run promete ser a mais espetacular de todas.
+            Novos percursos, surpresas incríveis e uma atmosfera única esperam por você.
+            Fique atento às próximas novidades!
+          </p>
+          <button class="mev-btn-avisado">Quero ser avisado</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
