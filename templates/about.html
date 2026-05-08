@@ -1,149 +1,169 @@
-<!-- ─────────────────────────────────────────
-     BOTÃO "SOBRE O EVENTO" → adicionar no .header do index.html
-     ───────────────────────────────────────── -->
-<button class="mev-open-btn" onclick="abrirModal()">Sobre o Evento</button>
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Araruna Night Run 2026</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/about.css') }}"
+        />
+    </head>
+    <body>
+        <div class="shooting-star"></div>
 
+        <span class="twinkle-star s1"></span>
+        <span class="twinkle-star s2"></span>
+        <span class="twinkle-star s3"></span>
+        <span class="twinkle-star s4"></span>
+        <span class="twinkle-star s5"></span>
+        <span class="twinkle-star s6"></span>
 
-<!-- ─────────────────────────────────────────
-     MODAL SOBRE O EVENTO → adicionar antes do </body>
-     ───────────────────────────────────────── -->
-<div id="modalEvento" class="mev-overlay" onclick="fecharModalFora(event)">
-  <div class="mev-box">
+        <!-- HERO -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="badge">Edição 2026</span>
+                <h1>ARARUNA<br />NIGHT RUN</h1>
+                <p class="hero-sub">
+                    Segunda Etapa · A corrida de Santo Antônio
+                </p>
 
-    <!-- Header -->
-    <div class="mev-header">
-      <span class="mev-titulo">Sobre o Evento</span>
-      <button class="mev-fechar" onclick="fecharModal()">✕</button>
-    </div>
+                <div class="hero-btns">
+                    <a href="/formulario" class="btn-orange">Fazer Inscrição</a>
+                </div>
 
-    <!-- Tabs -->
-    <div class="mev-tabs">
-      <button class="mev-tab active" data-tab="etapa1" onclick="trocarTab(this)">🏅 1ª Etapa</button>
-      <button class="mev-tab" data-tab="etapa2" onclick="trocarTab(this)">🌙 2ª Etapa</button>
-      <button class="mev-tab" data-tab="proximas" onclick="trocarTab(this)">🚀 Próximas</button>
-    </div>
-
-    <!-- Conteúdo -->
-    <div class="mev-content">
-
-      <!-- ── 1ª ETAPA ── -->
-      <div id="mev-etapa1" class="mev-pane active">
-        <div class="mev-badge success">✓ Evento realizado com sucesso</div>
-        <h3 class="mev-h3">A Noite que Iluminou Araruna</h3>
-        <p class="mev-p">
-          A primeira etapa do Araruna Night Run aconteceu no dia <strong>31 de janeiro de 2026</strong>, às 20h00,
-          na Avenida Marfim, em Araruna - PR. O evento foi realizado em parceria com o <strong>Projeto Rondon</strong>,
-          uma ação interministerial do Governo Federal coordenada pelo Ministério da Defesa, que envia universitários
-          voluntários para comunidades do Brasil. Naquele período o Projeto estava presente na cidade.
-        </p>
-        <p class="mev-p">
-          Com percursos de caminhada (2km) e corrida (6km), o evento reuniu <strong>mais de 600 participantes</strong>
-          — desde crianças até idosos — provando que o Araruna Night Run é um evento para toda a família.
-          Diferentes faixas etárias, uma só pista, uma só festa.
-        </p>
-
-        <div class="mev-stats">
-          <div class="mev-stat">
-            <span class="mev-stat-num">600+</span>
-            <span class="mev-stat-label">Inscritos</span>
-          </div>
-          <div class="mev-stat">
-            <span class="mev-stat-num">12</span>
-            <span class="mev-stat-label">Cidades Participantes</span>
-          </div>
-          <div class="mev-stat">
-            <span class="mev-stat-num">300+</span>
-            <span class="mev-stat-label">Corredores na Caminhada</span>
-          </div>
-        </div>
-
-        <!-- Carrossel -->
-        <div class="mev-carrossel">
-          <button class="mev-carr-btn prev" onclick="moverCarrossel(-1)">&#8249;</button>
-          <div class="mev-carr-viewport">
-            <div class="mev-carr-track" id="carrTrack">
-              <div class="mev-carr-slide"><img src="static/fotos/foto1.jpg" alt="1ª Etapa"></div>
-              <div class="mev-carr-slide"><img src="static/fotos/foto2.jpg" alt="1ª Etapa"></div>
-              <div class="mev-carr-slide"><img src="static/fotos/foto3.jpg" alt="1ª Etapa"></div>
-              <div class="mev-carr-slide"><img src="static/fotos/foto4.jpg" alt="1ª Etapa"></div>
+                <div class="countdown">
+                    <div class="count-box">
+                        <strong id="cd-days">--</strong>
+                        <span>Dias</span>
+                    </div>
+                    <div class="count-box">
+                        <strong id="cd-hours">--</strong>
+                        <span>Horas</span>
+                    </div>
+                    <div class="count-box">
+                        <strong id="cd-mins">--</strong>
+                        <span>Min</span>
+                    </div>
+                    <div class="count-box">
+                        <strong id="cd-secs">--</strong>
+                        <span>Seg</span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <button class="mev-carr-btn next" onclick="moverCarrossel(1)">&#8250;</button>
-          <div class="mev-carr-dots" id="carrDots"></div>
-        </div>
-      </div>
+        </section>
 
-      <!-- ── 2ª ETAPA ── -->
-      <div id="mev-etapa2" class="mev-pane">
-        <h3 class="mev-h3">Prepare-se para a Segunda Edição</h3>
-        <p class="mev-p">
-          A magia continua! Após o sucesso da primeira edição, estamos prontos para oferecer uma experiência
-          ainda mais incrível na segunda etapa da Araruna Night Run.
-        </p>
+        <!-- INFORMAÇÕES -->
+        <section class="info-section">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon"></div>
+                    <div>
+                        <strong>Data</strong>
+                        <p>12 de junho de 2026</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🕖</div>
+                    <div>
+                        <strong>Horário</strong>
+                        <p>Largada às 20h00</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <strong>Local - Início</strong>
+                        <p>Em frente áo ponto dos trabalhadores</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"></div>
+                    <div>
+                        <strong>Prémio</strong>
+                        <p>Medalha de participação</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="mev-grid">
-          <div class="mev-card">
-            <div class="mev-card-icon">📅</div>
-            <div>
-              <strong>Data e Horário</strong>
-              <p>12 de junho de 2026<br>Largada: 19h30<br>Local: Em frente à Rádio Cidade</p>
-            </div>
-          </div>
-          <div class="mev-card">
-            <div class="mev-card-icon">🏆</div>
-            <div>
-              <strong>Percursos</strong>
-              <p>• 5K - Corrida<br>• 10K - Corrida<br>• Caminhada</p>
-            </div>
-          </div>
-          <div class="mev-card">
-            <div class="mev-card-icon">📦</div>
-            <div>
-              <strong>Kit do Atleta</strong>
-              <p>• Camiseta oficial do evento<br>• Número de peito<br>• Chip de cronometragem<br>• Sacochila exclusiva</p>
-            </div>
-          </div>
-          <div class="mev-card">
-            <div class="mev-card-icon">🎁</div>
-            <div>
-              <strong>Premiação</strong>
-              <p>• Troféus para os 3 primeiros<br>• Premiação por categoria<br>• Medalhas para todos os participantes</p>
-            </div>
-          </div>
-          <div class="mev-card">
-            <div class="mev-card-icon">📋</div>
-            <div>
-              <strong>Retirada do Kit</strong>
-              <p>Data: 10 e 11 de junho<br>Horário: 14h às 20h<br>Local: Ginásio Municipal</p>
-            </div>
-          </div>
-          <div class="mev-card">
-            <div class="mev-card-icon">📄</div>
-            <div>
-              <strong>Regulamento</strong>
-              <p>• Idade mínima: 16 anos<br>• Atestado médico obrigatório<br>• Documento com foto na retirada</p>
-            </div>
-          </div>
-        </div>
+        <!-- PERCURSOS -->
+        <section class="percursos-section">
+            <h2 class="section-title">🏆 Percursos Disponíveis</h2>
+            <p class="section-sub">
+                Escolha a distância ideal para o seu nível
+            </p>
 
-        <button class="mev-btn-inscricao" onclick="fecharModal()">REALIZE SUA INSCRIÇÃO</button>
-      </div>
+            <div class="categories-grid">
+                <div class="category-card featured">
+                    <h3>2.4KM</h3>
+                    <p>1 Volta</p>
+                </div>
+                <div class="category-card">
+                    <h3>4.8KM</h3>
+                    <p>2 voltas</p>
+                </div>
+                <div class="category-card">
+                    <h3>7.8KM</h3>
+                    <p>3 voltas</p>
+                </div>
+                <div class="category-card">
+                    <h3>Caminhada</h3>
+                    <p>livre para todos os públicos</p>
+                </div>
+            </div>
+        </section>
 
-      <!-- ── PRÓXIMAS ── -->
-      <div id="mev-proximas" class="mev-pane">
-        <div class="mev-proximas-box">
-          <div class="mev-badge em-breve">✨ Em breve</div>
-          <h3 class="mev-h3 purple">3ª Etapa — Novembro 2026</h3>
-          <p class="mev-p-sub">Prepare-se para uma experiência ainda maior.</p>
-          <p class="mev-p">
-            A terceira etapa da Araruna Night Run promete ser a mais espetacular de todas.
-            Novos percursos, surpresas incríveis e uma atmosfera única esperam por você.
-            Fique atento às próximas novidades!
-          </p>
-          <button class="mev-btn-avisado">Quero ser avisado</button>
-        </div>
-      </div>
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Garanta sua vaga agora</h2>
+            <p>
+                Junte-se a centenas de atletas em uma noite inesquecível sob as
+                estrelas de Araruna.
+            </p>
+            <a href="/formulario" class="btn-orange">Fazer Inscrição</a>
+        </section>
 
-    </div>
-  </div>
-</div>
+        <!-- FOOTER -->
+        <footer class="page-footer">
+            <p>
+                Prefeitura de Araruna &bull;
+                <strong>Araruna Night Run 2026</strong>
+            </p>
+            <p>12 de junho de 2026 · 19h30 · Araruna – PR</p>
+        </footer>
+
+        <script>
+            const target = new Date("2026-06-12T19:30:00");
+            function tick() {
+                const diff = target - new Date();
+                const pad = (n) => String(Math.max(0, n)).padStart(2, "0");
+                document.getElementById("cd-days").textContent = pad(
+                    Math.floor(diff / 86400000),
+                );
+                document.getElementById("cd-hours").textContent = pad(
+                    Math.floor((diff % 86400000) / 3600000),
+                );
+                document.getElementById("cd-mins").textContent = pad(
+                    Math.floor((diff % 3600000) / 60000),
+                );
+                document.getElementById("cd-secs").textContent = pad(
+                    Math.floor((diff % 60000) / 1000),
+                );
+            }
+            tick();
+            setInterval(tick, 1000);
+
+            document.addEventListener("click", (e) => {
+                for (let i = 0; i < 5; i++) {
+                    const p = document.createElement("div");
+                    p.className = "comet-particle";
+                    p.style.left = e.clientX + (Math.random() * 20 - 10) + "px";
+                    p.style.top = e.clientY + (Math.random() * 20 - 10) + "px";
+                    document.body.appendChild(p);
+                    setTimeout(() => p.remove(), 800);
+                }
+            });
+        </script>
+    </body>
+</html>

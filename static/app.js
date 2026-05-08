@@ -67,7 +67,7 @@ estadoSelect.addEventListener("change", () => {
 });
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbypjdUcgalEshJInL-mijolV9awTpvfKw75d6l_MHZeP4LcUNFX7aIRkr8WO783npZfSg/exec";
+  "https://script.google.com/macros/s/AKfycbxk6XqrEGtE84AjuKdXffZ7eTAKdjRPh2rO9Dep3NlEOdDpVDX39PNMu_yxsY8j40HESg/exec";
 
 const form = document.getElementById("inscricaoForm");
 const msg = document.getElementById("msg");
@@ -123,15 +123,20 @@ form.addEventListener("submit", async function (e) {
   };
 
   try {
-    await fetch(SCRIPT_URL, {
+    const resposta = await fetch("/enviar", {
       method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dados),
     });
 
-    mostrarMensagem("success", "Inscrição realizada com sucesso!");
-    form.reset();
+    const resultado = await resposta.json();
+
+    if (resultado.ok) {
+      mostrarMensagem("success", resultado.mensagem);
+      form.reset();
+    } else {
+      mostrarMensagem("error", resultado.mensagem);
+    }
   } catch (erro) {
     mostrarMensagem("error", "Erro de conexão. Tente novamente em instantes.");
   } finally {
