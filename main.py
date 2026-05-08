@@ -10,7 +10,7 @@ SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyg5uG7spPxc-VtLk7lAmarGst
 
 @app.route("/", methods=["GET"])
 def index():
-    return render_template("about.html")
+    return render_template("home.html")
 
 
 # =========================

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Araruna Night Run 2026</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/about.css') }}"
+        />
+    </head>
+    <body>
+        <div class="shooting-star"></div>
+
+        <span class="twinkle-star s1"></span>
+        <span class="twinkle-star s2"></span>
+        <span class="twinkle-star s3"></span>
+        <span class="twinkle-star s4"></span>
+        <span class="twinkle-star s5"></span>
+        <span class="twinkle-star s6"></span>
+
+        <!-- HERO -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="badge">Edição 2026</span>
+                <h1>ARARUNA<br />NIGHT RUN</h1>
+                <p class="hero-sub">
+                    Segunda Etapa · A corrida de Santo Antônio
+                </p>
+
+                <div class="hero-btns">
+                    <a href="/formulario" class="btn-orange">Fazer Inscrição</a>
+                </div>
+
+                <div class="countdown">
+                    <div class="count-box">
+                        <strong id="cd-days">--</strong>
+                        <span>Dias</span>
+                    </div>
+                    <div class="count-box">
+                        <strong id="cd-hours">--</strong>
+                        <span>Horas</span>
+                    </div>
+                    <div class="count-box">
+                        <strong id="cd-mins">--</strong>
+                        <span>Min</span>
+                    </div>
+                    <div class="count-box">
+                        <strong id="cd-secs">--</strong>
+                        <span>Seg</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INFORMAÇÕES -->
+        <section class="info-section">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon"></div>
+                    <div>
+                        <strong>Data</strong>
+                        <p>12 de junho de 2026</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🕖</div>
+                    <div>
+                        <strong>Horário</strong>
+                        <p>Largada às 20h00</p>
+                    </div>
+                </div>
+                <a
+                    href="https://www.google.com/maps/d/embed?mid=1VnQ6UnjbndxFxpXGa0FFEH3MA3MR22E&ehbc=2E312F%22&ll=-23.930112970374026%2C-52.48124462718943&z=17"
+                    class="info-link"
+                >
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <strong>Local - Início</strong>
+                            <p>Em frente ao ponto dos trabalhadores</p>
+                        </div>
+                    </div>
+                </a>
+                <div class="info-card">
+                    <div class="info-icon"></div>
+                    <div>
+                        <strong>Prémio</strong>
+                        <p>Medalha de participação</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERCURSOS -->
+        <section class="percursos-section">
+            <h2 class="section-title">🏆 Percursos Disponíveis</h2>
+            <p class="section-sub">
+                Escolha a distância ideal para o seu nível
+            </p>
+
+            <div class="categories-grid">
+                <div class="category-card featured">
+                    <h3>2.4KM</h3>
+                    <p>1 Volta</p>
+                </div>
+                <div class="category-card">
+                    <h3>4.8KM</h3>
+                    <p>2 voltas</p>
+                </div>
+                <div class="category-card">
+                    <h3>7.8KM</h3>
+                    <p>3 voltas</p>
+                </div>
+                <div class="category-card">
+                    <h3>Caminhada</h3>
+                    <p>Livre para todos os públicos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2>Garanta sua vaga agora</h2>
+            <p>
+                Junte-se a centenas de atletas em uma noite inesquecível sob as
+                estrelas de Araruna.
+            </p>
+            <a href="/formulario" class="btn-orange">Fazer Inscrição</a>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="page-footer">
+            <p>
+                Prefeitura de Araruna &bull;
+                <strong>Araruna Night Run 2026</strong>
+            </p>
+            <p>12 de junho de 2026 · 19h30 · Araruna – PR</p>
+        </footer>
+
+        <script>
+            const target = new Date("2026-06-12T19:30:00");
+            function tick() {
+                const diff = target - new Date();
+                const pad = (n) => String(Math.max(0, n)).padStart(2, "0");
+                document.getElementById("cd-days").textContent = pad(
+                    Math.floor(diff / 86400000),
+                );
+                document.getElementById("cd-hours").textContent = pad(
+                    Math.floor((diff % 86400000) / 3600000),
+                );
+                document.getElementById("cd-mins").textContent = pad(
+                    Math.floor((diff % 3600000) / 60000),
+                );
+                document.getElementById("cd-secs").textContent = pad(
+                    Math.floor((diff % 60000) / 1000),
+                );
+            }
+            tick();
+            setInterval(tick, 1000);
+
+            document.addEventListener("click", (e) => {
+                for (let i = 0; i < 5; i++) {
+                    const p = document.createElement("div");
+                    p.className = "comet-particle";
+                    p.style.left = e.clientX + (Math.random() * 20 - 10) + "px";
+                    p.style.top = e.clientY + (Math.random() * 20 - 10) + "px";
+                    document.body.appendChild(p);
+                    setTimeout(() => p.remove(), 800);
+                }
+            });
+        </script>
+    </body>
+</html>
