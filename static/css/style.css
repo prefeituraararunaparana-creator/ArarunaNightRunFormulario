@@ -1334,3 +1334,14 @@ button:disabled {
         width: 100%;
     }
 }
+
+.info-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.info-link * {
+    text-decoration: none !important;
+    color: inherit;
+}
