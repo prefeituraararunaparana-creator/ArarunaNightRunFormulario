@@ -12,9 +12,16 @@ SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyg5uG7spPxc-VtLk7lAmarGst
 def home():
     return render_template("home.html")
 
+
 @app.route("/sobre", methods=["GET"])
 def about():
     return render_template("about.html")
+
+
+@app.route("/politica_de_privacidade")
+def policy():
+    return render_template("policy.html")
+
 
 # =========================
 # FORMULÁRIO
