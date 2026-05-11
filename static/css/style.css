@@ -8,7 +8,7 @@
     --neon-orange: #ff8c00;
     --neon-orange-strong: #ff8c00;
     --night-black: #02030a;
-    --card-bg: rgba(20, 20, 24, 0.88);
+    --card-bg: #07111f;
     --field-bg: #f4f1ea;
     --field-border: rgba(242, 138, 46, 0.35);
     --text-light: #fff7ed;
@@ -532,7 +532,17 @@ button {
 .home_buttons {
     margin-top: 16px;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.btn-orange,
+.about {
+    padding: 12px 16px;
+    font-size: 13px;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 button:hover {
@@ -810,9 +820,8 @@ button:disabled {
 
     border-radius: 24px;
 
-    background: rgba(255, 255, 255, 0.04);
-
-    border: 1px solid rgba(217, 122, 43, 0.2);
+    background: #07111f;
+    border: 1px solid #d97a2b;
 
     backdrop-filter: blur(10px);
 
@@ -870,6 +879,13 @@ button:disabled {
 @media (max-width: 560px) {
     .categories-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 560px) {
+    .home_buttons {
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 }
 
@@ -2166,6 +2182,54 @@ button:disabled {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
+.countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(217, 122, 43, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin-top: 20px;
+    gap: 4px;
+}
+
+.countdown .unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+.countdown .unit span:first-child {
+    font-family: "Courier New", monospace;
+    font-size: clamp(24px, 8vw, 48px);
+    font-weight: 700;
+    color: #e8a44a;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+.countdown .label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(217, 122, 43, 0.55);
+}
+
+.countdown .sep {
+    font-family: "Courier New", monospace;
+    font-size: clamp(20px, 6vw, 40px);
+    font-weight: 700;
+    color: rgba(217, 122, 43, 0.4);
+    margin-bottom: 18px;
+    flex-shrink: 0;
+}
 
 .info-card {
     display: flex;
@@ -2173,8 +2237,8 @@ button:disabled {
     gap: 14px;
     padding: 20px;
     border-radius: 18px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(217, 122, 43, 0.2);
+    background: #07111f;
+    border: 1px solid #d97a2b;
     backdrop-filter: blur(10px);
     transition: 0.28s ease;
 }
@@ -2488,4 +2552,12 @@ a:hover {
 
         line-height: 1.9;
     }
+}
+
+.event-info {
+    background-color: lightslategray;
+    border-radius: 28px;
+    padding: clamp(20px, 4vw, 48px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
