@@ -822,7 +822,7 @@ button:disabled {
 }
 
 .category-card {
-    padding: 26px 20px;
+    padding: 32px 30px;
 
     border-radius: 24px;
 
@@ -2236,7 +2236,7 @@ button:disabled {
 }
 
 .countdown .label {
-    font-size: 9px;
+    font-size: clamp(1.5rem, 4vw, 1.5rem);
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -2256,7 +2256,7 @@ button:disabled {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 20px;
+    padding: 32px;
     border-radius: 18px;
     background: #07111f;
     border: 1px solid #d97a2b;
@@ -2280,7 +2280,7 @@ button:disabled {
 
 .info-card p {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: clamp(1.5rem, 1vw, 1.5rem);
 }
 
 .info-icon {
@@ -2577,12 +2577,15 @@ a:hover {
 
 .event-info {
     background-color: rgba(8, 12, 28, 0.72);
-    border: solid 1px var(--neon-orange);
+    border: solid 1px;
     border-radius: 28px;
     padding: clamp(20px, 4vw, 48px);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+    border: 1px solid #ff8c00;
+
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        0 0 4px #ff8c00,
+        0 0 12px rgba(255, 140, 0, 0.8),
+        0 0 24px rgba(255, 140, 0, 0.5);
 }
