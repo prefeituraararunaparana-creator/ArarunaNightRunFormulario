@@ -123,7 +123,7 @@ form.addEventListener("submit", async function (e) {
   };
 
   try {
-    const resposta = await fetch("/enviar", {
+    const resposta = await fetch(SCRIPT_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dados),
