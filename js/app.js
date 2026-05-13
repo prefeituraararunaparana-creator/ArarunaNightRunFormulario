@@ -67,7 +67,7 @@ estadoSelect.addEventListener("change", () => {
 });
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxk6XqrEGtE84AjuKdXffZ7eTAKdjRPh2rO9Dep3NlEOdDpVDX39PNMu_yxsY8j40HESg/exec";
+  "https://script.google.com/macros/s/AKfycbwNiwwS1Ge7aRnNInUm0c_yYk018odGccfih59ifmxiGKe9zoWXvio6Y3crAXzpcs0vOw/exec";
 
 const form = document.getElementById("inscricaoForm");
 const msg = document.getElementById("msg");
@@ -125,7 +125,7 @@ form.addEventListener("submit", async function (e) {
   try {
     const resposta = await fetch(SCRIPT_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "text/plain" },
       body: JSON.stringify(dados),
     });
 
