@@ -1503,7 +1503,7 @@ button:disabled {
 .ab-hero-title {
     font-size: clamp(2rem, 7vw, 3.5rem);
     font-weight: 800;
-    color: #e8a045;
+    color: var(--neon-orange);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     text-shadow: 0 0 40px rgba(232, 160, 69, 0.6);
@@ -1555,9 +1555,9 @@ button:disabled {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(20, 83, 45, 0.3);
+    background: #993030;
     border: 1px solid rgba(74, 222, 128, 0.4);
-    color: #86efac;
+    color: blue;
     padding: 10px 22px;
     border-radius: 999px;
     font-size: 0.82rem;
@@ -1571,16 +1571,17 @@ button:disabled {
 .ab-section-title {
     font-size: clamp(1.75rem, 5vw, 2.5rem);
     font-weight: 800;
-    color: #fde68a;
+    color: var(--neon-orange);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
     margin-bottom: 8px;
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 40px rgba(232, 160, 69, 0.6);
 }
 
 .ab-section-sub {
     font-size: clamp(1.1rem, 3vw, 1.4rem);
     font-weight: 600;
-    color: #d97a2b;
+    color: var(--neon-orange);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 24px;

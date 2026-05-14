@@ -1,334 +1,410 @@
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre o Evento - Araruna Night Run 2026</title>
-    <link rel="stylesheet" href="css/style.css" />
-</head>
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sobre o Evento - Araruna Night Run 2026</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
 
-<body>
+    <body>
+        <!-- Estrelas animadas -->
+        <div class="ab-stars" id="abStars"></div>
 
-    <!-- Estrelas animadas -->
-    <div class="ab-stars" id="abStars"></div>
+        <!-- Orbs de fundo -->
+        <div class="ab-orb ab-orb-orange"></div>
+        <div class="ab-orb ab-orb-blue"></div>
 
-    <!-- Orbs de fundo -->
-    <div class="ab-orb ab-orb-orange"></div>
-    <div class="ab-orb ab-orb-blue"></div>
+        <div class="ab-wrapper">
+            <!-- ── HERO ── -->
+            <section class="ab-hero">
+                <a href="index.html" class="btn btn-orange">
+                    Voltar a página principal
+                </a>
+            </section>
 
-    <div class="ab-wrapper">
-
-        <!-- ── HERO ── -->
-        <section class="ab-hero">
-            <a href="/" class="ab-voltar">
-                <span class="ab-voltar-icon">
-                    << 
-                        Voltar ao Dashboard
-            </a>
-            <h1 class="ab-hero-title">SOBRE O EVENTO</h1>
-            <div class="ab-divider-line"></div>
-            <p class="ab-hero-sub">
-                A Araruna Night Run é mais do que uma corrida. É uma experiência noturna única
-                que transforma as ruas da cidade em um palco de superação, energia e comunidade.
-            </p>
-        </section>
-
-        <!-- Separador -->
-        <div class="ab-separator"></div>
-
-        <!-- ── 1ª ETAPA ── -->
-        <section class="ab-section">
-            <div class="ab-section-header">
-                <div class="ab-badge-success">
-                    ✓ Evento Realizado com Sucesso
-                </div>
-                <h2 class="ab-section-title">1ª ETAPA</h2>
-                <h3 class="ab-section-sub">Uma Noite Inesquecível</h3>
-                <p class="ab-text">
-                    A primeira etapa do Araruna Night Run aconteceu no dia <strong>31 de janeiro de 2026</strong>,
-                    às 20h00, na Avenida Marfim, em Araruna-PR. O evento foi realizado em parceria com o
-                    <strong>Projeto Rondon</strong>, uma ação interministerial do Governo Federal coordenada
-                    pelo Ministério da Defesa, que envia universitários voluntários para comunidades do Brasil.
-                    Naquele período o Projeto estava presente na cidade.
-                </p>
-                <p class="ab-text">
-                    Com percursos de caminhada (2km) e corrida (6km), o evento reuniu
-                    <strong>mais de 600 participantes</strong> desde crianças até idosos
-                    provando que o Araruna Night Run é um evento para toda a família.<br>
-                    <strong>Diferentes faixas etárias, uma só pista, uma só festa.</strong>
-                </p>
-            </div>
-
-            <!-- Stats -->
-            <div class="ab-stats-grid">
-                <div class="ab-stat-card">
-                    <!--<span class="ab-stat-icon">👥</span> -->
-                    <span class="ab-stat-num">800+</span>
-                    <span class="ab-stat-label">Inscritos</span>
-                </div>
-                <div class="ab-stat-card">
-                    <!-- <span class="ab-stat-icon">📍</span>-->
-                    <span class="ab-stat-num">600+</span>
-                    <span class="ab-stat-label">Medalhas distribuídas</span>
-                </div>
-                <div class="ab-stat-card">
-                    <!--<span class="ab-stat-icon">🚩</span>-->
-                    <span class="ab-stat-num">600+</span>
-                    <span class="ab-stat-label">Corredores na Caminhada</span>
-                </div>
-            </div>
-
-            <!-- Carrossel -->
-            <div class="ab-carousel-box">
-                <h3 class="ab-carousel-title">Momentos Inesquecíveis</h3>
-                <div class="ab-carousel">
-                    <button class="ab-carr-btn ab-carr-prev" onclick="moverSlide(-1)">&#8249;</button>
-                    <div class="ab-carr-viewport">
-                        <div class="ab-carr-track" id="abCarrTrack">
-                            <div class="ab-carr-slide">
-                                <img src="css/img/FotoCorrida3.jpg" alt="1ª Etapa">
-                                <div class="ab-carr-overlay"></div>
-                            </div>
-                            <div class="ab-carr-slide">
-                                <img src="css/img/FotoCorrida2.jpg" alt="1ª Etapa">
-                                <div class="ab-carr-overlay"></div>
-                            </div>
-                            <div class="ab-carr-slide">
-                                <img src="css/img/FotoCorrida1.jpg" alt="1ª Etapa">
-                                <div class="ab-carr-overlay"></div>
-                            </div>
-                            <!--<div class="ab-carr-slide">
-                                    <img src="css/img/VideoCorrida1.jpeg" alt="1ª Etapa">
-                                    <div class="ab-carr-overlay"></div>
-                                </div>-->
-                        </div>
-                    </div>
-                    <button class="ab-carr-btn ab-carr-next" onclick="moverSlide(1)">&#8250;</button>
-                    <div class="ab-carr-dots" id="abCarrDots"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Separador -->
-        <div class="ab-separator"></div>
-
-        <!-- ── 2ª ETAPA ── -->
-        <section class="ab-section">
-            <div class="ab-section-header">
-                <h2 class="ab-section-title">2ª ETAPA</h2>
-                <h3 class="ab-section-sub">A Edição Atual</h3>
-                <p class="ab-text">
-                    Prepare-se para a segunda edição da Araruna Night Run - Corrida de Santo Antônio. Mais emoção, mais
-                    desafios,
-                    e a mesma energia contagiante que fez a primeira edição ser um sucesso.
-                </p>
-            </div>
-
-            <!-- Data e Local -->
-            <div class="ab-grid-2 ab-mb">
-                <div class="ab-card">
-                    <div class="ab-card-row">
-                        <div>
-                            <strong class="ab-card-title">Data & Horário</strong>
-                            <ul class="ab-list">
-                                <li>20 de Junho de 2026</li>
-                                <li>Largada às 20h00</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="ab-card">
-                    <div class="ab-card-row">
-                        <div>
-                            <strong class="ab-card-title">Local da Largada</strong>
-                            <ul class="ab-list">
-                                <li>Em frente ao Ponto dos Trabalhadores</li>
-                            </ul>
-                            <p class="ab-muted">Araruna-PR</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Percursos -->
-            <div class="ab-card ab-mb">
-                <h3 class="ab-card-title-center">Percursos Disponíveis</h3>
-                <div class="ab-grid-3">
-                    <div class="ab-percurso-card ab-percurso-orange">
-                        <strong>2,4K</strong>
-                        <span>Corrida e Caminhada</span>
-                    </div>
-                    <div class="ab-percurso-card ab-percurso-amber">
-                        <strong>4,8K</strong>
-                        <span>Corrida e Caminhada</span>
-                    </div>
-                    <div class="ab-percurso-card ab-percurso-blue">
-                        <strong>7,2K</strong>
-                        <span>Corrida e Caminhada</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Infos adicionais -->
-            <div class="ab-grid-2 ab-mb">
-                <div class="ab-card">
-                    <div class="ab-card-row">
-                        <div>
-                            <strong class="ab-card-title">Premiação</strong>
-                            <ul class="ab-list">
-                                <li>Medalha de participação para todos os participantes</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="ab-card">
-                    <div class="ab-card-row">
-                        <div>
-                            <strong class="ab-card-title">Início da largada</strong>
-                            <ul class="ab-list">
-                                <li>Início no Ponto dos Trabalhadores até a antiga Lider Lar, retornando ao ponto
-                                    inicial</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="ab-card">
-                    <div class="ab-card-row">
-                        <div>
-                            <strong class="ab-card-title">Regulamento</strong>
-                            <ul class="ab-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; column-gap: 65px;">
-                                <li>Todas as faixas etárias podem participar</li>
-                                <li>Crianças devem estar acompanhadas por um responsável</li>
-                                <li>Haverá água e frutas disponíveis duranto o evento</li>
-                                <li>Banheiros disponíveis no local</li>
-                                <li>Evento contará com ambulância e equipe de apoio</li>
-                                <li>Vagas ilimitadas</li>
-                                <li>Inscrições pelo Site ou na Hora do Evento</li>
-                                <li>Para garantir sua medalha de participação, é necessário realizar a inscrição
-                                    previamente</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ab-card">
-                    <div style="width: 100%;">
-                        <strong class="ab-card-title">Percurso</strong>
-                        <ul class="ab-list">
-                            <a href="..." target="_blank" rel="noopener noreferrer" class="info-link">
-                                <li><strong>Click para ver o mapa do percurso</strong></li>
-                            </a>
-                            <div class="ab-map-box" style="width: 100%; height: 400px;">
-                                <iframe
-                                    src="https://www.google.com/maps/d/u/0/embed?mid=1VnQ6UnjbndxFxpXGa0FFEH3MA3MR22E&ehbc=2E312F%22&ll=-23.930112970374026%2C-52.48124462718943&z=17"
-                                    width="100%" height="100%" style="border:0; display:block;" allowfullscreen=""
-                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="ab-cta">
-                <a href="/formulario" class="ab-btn-inscricao">Realize sua Inscrição</a>
-            </div>
-        </section>
-
-        <!-- Separador -->
-        <div class="ab-separator"></div>
-
-        <!-- ── PRÓXIMAS ETAPAS ── -->
-        <section class="ab-section ab-section-last">
-            <div class="ab-proximas-box">
-                <div class="ab-particles" id="abParticles"></div>
-                <div class="ab-proximas-content">
-                    <h2 class="ab-proximas-title">O Futuro Está Chegando</h2>
-                    <p class="ab-text ab-text-center">
-                        A 3ª etapa da Araruna Night Run acontecerá em
-                        <strong class="ab-highlight">novembro de 2026</strong>.
-                        Prepare-se para uma experiência, com mais desafios,
-                        mais emoção e surpresas que vão transformar a noite em pura adrenalina.
+            <!-- ── 1ª ETAPA ── -->
+            <section class="ab-section">
+                <div class="ab-section-header">
+                    <div class="badge">✓ Evento Realizado com Sucesso</div>
+                    <h2 class="ab-section-title">1ª ETAPA</h2>
+                    <h3 class="ab-section-sub">Uma Noite Inesquecível</h3>
+                    <p class="ab-text">
+                        A primeira etapa do Araruna Night Run aconteceu no dia
+                        <strong>31 de janeiro de 2026</strong>, às 20h00, na
+                        Avenida Marfim, em Araruna-PR. O evento foi realizado em
+                        parceria com o <strong>Projeto Rondon</strong>, uma ação
+                        interministerial do Governo Federal coordenada pelo
+                        Ministério da Defesa, que envia universitários
+                        voluntários para comunidades do Brasil. Naquele período
+                        o Projeto estava presente na cidade.
                     </p>
-                    <div class="ab-proximas-badge">
-                        <span class="ab-proximas-badge-label">Em Breve</span>
-                        <strong class="ab-proximas-badge-date">Novembro 2026</strong>
+                    <p class="ab-text">
+                        Com percursos de caminhada (2km) e corrida (6km), o
+                        evento reuniu
+                        <strong>mais de 600 participantes</strong> desde
+                        crianças até idosos provando que o Araruna Night Run é
+                        um evento para toda a família.<br />
+                        <strong
+                            >Diferentes faixas etárias, uma só pista, uma só
+                            festa.</strong
+                        >
+                    </p>
+                </div>
+
+                <!-- Stats -->
+                <div class="ab-stats-grid">
+                    <div class="ab-stat-card">
+                        <!--<span class="ab-stat-icon">👥</span> -->
+                        <span class="ab-stat-num">800+</span>
+                        <span class="ab-stat-label">Inscritos</span>
                     </div>
-                    <div class="ab-proximas-lista">
-                        <p>AGUARDEM...</p>
+                    <div class="ab-stat-card">
+                        <!-- <span class="ab-stat-icon">📍</span>-->
+                        <span class="ab-stat-num">600+</span>
+                        <span class="ab-stat-label">Medalhas distribuídas</span>
+                    </div>
+                    <div class="ab-stat-card">
+                        <!--<span class="ab-stat-icon">🚩</span>-->
+                        <span class="ab-stat-num">600+</span>
+                        <span class="ab-stat-label"
+                            >Corredores na Caminhada</span
+                        >
                     </div>
                 </div>
-            </div>
-        </section>
 
-    </div>
+                <!-- Carrossel -->
+                <div class="ab-carousel-box">
+                    <h3 class="ab-carousel-title">Momentos Inesquecíveis</h3>
+                    <div class="ab-carousel">
+                        <button
+                            class="ab-carr-btn ab-carr-prev"
+                            onclick="moverSlide(-1)"
+                        >
+                            &#8249;
+                        </button>
+                        <div class="ab-carr-viewport">
+                            <div class="ab-carr-track" id="abCarrTrack">
+                                <div class="ab-carr-slide">
+                                    <img
+                                        src="img/FotoCorrida3.jpeg"
+                                        alt="1ª Etapa"
+                                    />
+                                    <div class="ab-carr-overlay"></div>
+                                </div>
+                                <div class="ab-carr-slide">
+                                    <img
+                                        src="img/FotoCorrida2.jpg"
+                                        alt="1ª Etapa"
+                                    />
+                                    <div class="ab-carr-overlay"></div>
+                                </div>
+                                <div class="ab-carr-slide">
+                                    <img
+                                        src="img/FotoCorrida1.jpg"
+                                        alt="1ª Etapa"
+                                    />
+                                    <div class="ab-carr-overlay"></div>
+                                </div>
+                                <!--<div class="ab-carr-slide">
+                                        <img src="css/img/VideoCorrida1.jpeg" alt="1ª Etapa">
+                                        <div class="ab-carr-overlay"></div>
+                                    </div>-->
+                            </div>
+                        </div>
+                        <button
+                            class="ab-carr-btn ab-carr-next"
+                            onclick="moverSlide(1)"
+                        >
+                            &#8250;
+                        </button>
+                        <div class="ab-carr-dots" id="abCarrDots"></div>
+                    </div>
+                </div>
+            </section>
 
-    <script>
-        const starsContainer = document.getElementById("abStars");
-        for (let i = 0; i < 150; i++) {
-            const star = document.createElement("div");
-            star.className = "ab-star";
-            const size = Math.random() * 2 + 0.5;
-            star.style.cssText = `
-                    width: ${size}px;
-                    height: ${size}px;
-                    top: ${Math.random() * 100}%;
-                    left: ${Math.random() * 100}%;
-                    opacity: ${Math.random() * 0.7 + 0.3};
-                    animation-duration: ${Math.random() * 4 + 2}s;
-                    animation-delay: ${Math.random() * 2}s;
-                `;
-            starsContainer.appendChild(star);
-        }
+            <!-- Separador -->
+            <div class="ab-separator"></div>
 
-        const particlesContainer = document.getElementById("abParticles");
-        for (let i = 0; i < 30; i++) {
-            const p = document.createElement("div");
-            p.className = "ab-particle";
-            const size = Math.random() * 120 + 60;
-            p.style.cssText = `
-                    background: ${i % 2 === 0 ? "rgba(232,160,69,0.2)" : "rgba(59,130,246,0.15)"};
-                    width: ${size}px;
-                    height: ${size}px;
-                    top: ${Math.random() * 100}%;
-                    left: ${Math.random() * 100}%;
-                    animation-duration: ${Math.random() * 6 + 4}s;
-                    animation-delay: ${Math.random() * 3}s;
-                `;
-            particlesContainer.appendChild(p);
-        }
+            <!-- ── 2ª ETAPA ── -->
+            <section class="ab-section">
+                <div class="ab-section-header">
+                    <h2 class="ab-section-title">2ª ETAPA</h2>
+                    <h3 class="ab-section-sub">A Edição Atual</h3>
+                    <p class="ab-text">
+                        Prepare-se para a segunda edição da Araruna Night Run -
+                        Corrida de Santo Antônio. Mais emoção, mais desafios, e
+                        a mesma energia contagiante que fez a primeira edição
+                        ser um sucesso.
+                    </p>
+                </div>
 
-        const totalSlides = document.querySelectorAll(".ab-carr-slide").length;
-        let slideAtual = 0;
-        const track = document.getElementById("abCarrTrack");
-        const dotsContainer = document.getElementById("abCarrDots");
+                <!-- Data e Local -->
+                <div class="ab-grid-2 ab-mb">
+                    <div class="ab-card">
+                        <div class="ab-card-row">
+                            <div>
+                                <strong class="ab-card-title"
+                                    >Data & Horário</strong
+                                >
+                                <ul class="ab-list">
+                                    <li>20 de Junho de 2026</li>
+                                    <li>Largada às 20h00</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ab-card">
+                        <div class="ab-card-row">
+                            <div>
+                                <strong class="ab-card-title"
+                                    >Local da Largada</strong
+                                >
+                                <ul class="ab-list">
+                                    <li>
+                                        Em frente ao Ponto dos Trabalhadores
+                                    </li>
+                                </ul>
+                                <p class="ab-muted">Araruna-PR</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement("span");
-            dot.className = "ab-dot" + (i === 0 ? " active" : "");
-            dot.addEventListener("click", () => irParaSlide(i));
-            dotsContainer.appendChild(dot);
-        }
+                <!-- Percursos -->
+                <div class="ab-card ab-mb">
+                    <h3 class="ab-card-title-center">Percursos Disponíveis</h3>
+                    <div class="ab-grid-3">
+                        <div class="ab-percurso-card ab-percurso-orange">
+                            <strong>2,4K</strong>
+                            <span>Corrida e Caminhada</span>
+                        </div>
+                        <div class="ab-percurso-card ab-percurso-amber">
+                            <strong>4,8K</strong>
+                            <span>Corrida e Caminhada</span>
+                        </div>
+                        <div class="ab-percurso-card ab-percurso-blue">
+                            <strong>7,2K</strong>
+                            <span>Corrida e Caminhada</span>
+                        </div>
+                    </div>
+                </div>
 
-        function irParaSlide(index) {
-            slideAtual = index;
-            track.style.transform = `translateX(-${slideAtual * 100}%)`;
-            document.querySelectorAll(".ab-dot").forEach((d, i) => {
-                d.classList.toggle("active", i === slideAtual);
-            });
-        }
+                <!-- Infos adicionais -->
+                <div class="ab-grid-2 ab-mb">
+                    <div class="ab-card">
+                        <div class="ab-card-row">
+                            <div>
+                                <strong class="ab-card-title">Premiação</strong>
+                                <ul class="ab-list">
+                                    <li>
+                                        Medalha de participação para todos os
+                                        participantes
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ab-card">
+                        <div class="ab-card-row">
+                            <div>
+                                <strong class="ab-card-title"
+                                    >Início da largada</strong
+                                >
+                                <ul class="ab-list">
+                                    <li>
+                                        Início no Ponto dos Trabalhadores até a
+                                        antiga Lider Lar, retornando ao ponto
+                                        inicial
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 20px">
+                    <div class="ab-card">
+                        <div class="ab-card-row">
+                            <div>
+                                <strong class="ab-card-title"
+                                    >Regulamento</strong
+                                >
+                                <ul
+                                    class="ab-list"
+                                    style="
+                                        display: grid;
+                                        grid-template-columns: 1fr 1fr;
+                                        gap: 10px;
+                                        column-gap: 65px;
+                                    "
+                                >
+                                    <li>
+                                        Todas as faixas etárias podem participar
+                                    </li>
+                                    <li>
+                                        Crianças devem estar acompanhadas por um
+                                        responsável
+                                    </li>
+                                    <li>
+                                        Haverá água e frutas disponíveis duranto
+                                        o evento
+                                    </li>
+                                    <li>Banheiros disponíveis no local</li>
+                                    <li>
+                                        Evento contará com ambulância e equipe
+                                        de apoio
+                                    </li>
+                                    <li>Vagas ilimitadas</li>
+                                    <li>
+                                        Inscrições pelo Site ou na Hora do
+                                        Evento
+                                    </li>
+                                    <li>
+                                        Para garantir sua medalha de
+                                        participação, é necessário realizar a
+                                        inscrição previamente
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-        function moverSlide(dir) {
-            let novo = slideAtual + dir;
-            if (novo < 0) novo = totalSlides - 1;
-            if (novo >= totalSlides) novo = 0;
-            irParaSlide(novo);
-        }
+                    <div class="ab-card">
+                        <div style="width: 100%">
+                            <strong class="ab-card-title">Percurso</strong>
+                            <ul class="ab-list">
+                                <a
+                                    href="..."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="info-link"
+                                >
+                                    <li>
+                                        <strong
+                                            >Click para ver o mapa do
+                                            percurso</strong
+                                        >
+                                    </li>
+                                </a>
+                                <div
+                                    class="ab-map-box"
+                                    style="width: 100%; height: 400px"
+                                >
+                                    <iframe
+                                        src="https://www.google.com/maps/d/u/0/embed?mid=1VnQ6UnjbndxFxpXGa0FFEH3MA3MR22E&ehbc=2E312F%22&ll=-23.930112970374026%2C-52.48124462718943&z=17"
+                                        width="100%"
+                                        height="100%"
+                                        style="border: 0; display: block"
+                                        allowfullscreen=""
+                                        loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"
+                                    >
+                                    </iframe>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-        setInterval(() => moverSlide(1), 3000);
-    </script>
+                <!-- CTA -->
+                <div class="ab-cta">
+                    <a href="form.html" class="btn btn-orange"
+                        >Realize sua Inscrição</a
+                    >
+                </div>
+            </section>
 
-</body>
+            <!-- Separador -->
+            <div class="ab-separator"></div>
 
+            <!-- ── PRÓXIMAS ETAPAS ── -->
+            <section class="ab-section ab-section-last">
+                <div class="ab-proximas-box">
+                    <div class="ab-particles" id="abParticles"></div>
+                    <div class="ab-proximas-content">
+                        <h2 class="ab-section-title">Em breve</h2>
+                        <p class="ab-text ab-text-center">
+                            A 3ª etapa da Araruna Night Run acontecerá em
+                            <strong class="ab-highlight"
+                                >novembro de 2026</strong
+                            >. Prepare-se para uma experiência, com mais
+                            desafios, mais emoção e surpresas que vão
+                            transformar a noite em pura adrenalina.
+                        </p>
+                        <div class="ab-proximas-badge">
+                            <strong class="ab-proximas-badge-date"
+                                >Novembro 2026</strong
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script>
+            const starsContainer = document.getElementById("abStars");
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement("div");
+                star.className = "ab-star";
+                const size = Math.random() * 2 + 0.5;
+                star.style.cssText = `
+                        width: ${size}px;
+                        height: ${size}px;
+                        top: ${Math.random() * 100}%;
+                        left: ${Math.random() * 100}%;
+                        opacity: ${Math.random() * 0.7 + 0.3};
+                        animation-duration: ${Math.random() * 4 + 2}s;
+                        animation-delay: ${Math.random() * 2}s;
+                    `;
+                starsContainer.appendChild(star);
+            }
+
+            const particlesContainer = document.getElementById("abParticles");
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement("div");
+                p.className = "ab-particle";
+                const size = Math.random() * 120 + 60;
+                p.style.cssText = `
+                        background: ${i % 2 === 0 ? "rgba(232,160,69,0.2)" : "rgba(59,130,246,0.15)"};
+                        width: ${size}px;
+                        height: ${size}px;
+                        top: ${Math.random() * 100}%;
+                        left: ${Math.random() * 100}%;
+                        animation-duration: ${Math.random() * 6 + 4}s;
+                        animation-delay: ${Math.random() * 3}s;
+                    `;
+                particlesContainer.appendChild(p);
+            }
+
+            const totalSlides =
+                document.querySelectorAll(".ab-carr-slide").length;
+            let slideAtual = 0;
+            const track = document.getElementById("abCarrTrack");
+            const dotsContainer = document.getElementById("abCarrDots");
+
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement("span");
+                dot.className = "ab-dot" + (i === 0 ? " active" : "");
+                dot.addEventListener("click", () => irParaSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            function irParaSlide(index) {
+                slideAtual = index;
+                track.style.transform = `translateX(-${slideAtual * 100}%)`;
+                document.querySelectorAll(".ab-dot").forEach((d, i) => {
+                    d.classList.toggle("active", i === slideAtual);
+                });
+            }
+
+            function moverSlide(dir) {
+                let novo = slideAtual + dir;
+                if (novo < 0) novo = totalSlides - 1;
+                if (novo >= totalSlides) novo = 0;
+                irParaSlide(novo);
+            }
+
+            setInterval(() => moverSlide(1), 3000);
+        </script>
+    </body>
 </html>
