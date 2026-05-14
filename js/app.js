@@ -151,7 +151,7 @@ const minEl = document.getElementById("min");
 const segEl = document.getElementById("seg");
 
 function atualizarContador() {
-  const evento = new Date("2026-05-19T20:00:00");
+  const evento = new Date("2026-04-07T20:00:00");
   const agora = new Date();
 
   const diff = evento - agora;
